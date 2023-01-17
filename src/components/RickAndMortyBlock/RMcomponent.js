@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
- let allUser = [];
+let allUser = [];
 
 export function GetChar() {
 
@@ -21,13 +21,17 @@ export function GetChar() {
 export const RMcomponent = () => {
 
     return (
-        <div>
+        <div className={'components'}>
             {allUser.map(value =>
-                <div key={value.id}>
-                    {value.id}
-                    {value.name}
-                    {/*<div></div>*/}
-                <img key={value.id} src={value.image} alt={"image"}/>
+                <div key={value.id} className={'component'}>
+                    <div className={'attr'}>
+                        {value.id}<br/>
+                        {value.name}<br/>
+                        {value.status}<br/>
+                        {value.species}<br/>
+                        {value.gender}
+                    </div>
+                    <img key={value.id} src={value.image} alt={`${value.name}`}/>
                 </div>
             )}
         </div>
