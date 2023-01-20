@@ -5,6 +5,7 @@ import {Users} from "../Users/Users";
 import {Posts} from "../Posts/Posts";
 import {Details} from "../Details/Details";
 import {Comments} from "../Comments/Comments";
+import {Rockets} from "../Rockets/Rockets";
 
 const Main = () => {
 
@@ -39,6 +40,9 @@ const Main = () => {
 
             <div className={css.comments}>
                 {postIdByPost && <Comments postIdByPost={postIdByPost}/>}
+            </div>
+            <div>
+                <Rockets/>
             </div>
         </div>
     );

@@ -1,7 +1,11 @@
 import axios from "axios";
-import {baseUrl} from "../configs/urls";
-
+import {baseUrl, rocketUrl} from "../configs/urls";
 
 const axiosService = axios.create({baseURL:baseUrl});
 
-export {axiosService};
+const axiosRocketService = axios.create({baseURL:rocketUrl});
+
+export {
+    axiosService,
+    axiosRocketService
+};

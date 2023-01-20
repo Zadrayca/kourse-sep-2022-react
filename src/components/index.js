@@ -7,3 +7,5 @@ export * from './User/User';
 export * from './Details/Details';
 export * from './UserDetails/UserDetails';
 export * from './Main/Main';
+export * from './Rocket/Rocket';
+export * from './Rockets/Rockets';
