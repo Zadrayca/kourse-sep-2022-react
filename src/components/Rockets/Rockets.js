@@ -1,6 +1,7 @@
 import React from 'react';
-import {Rocket} from "../Rocket/Rocket";
 import {useEffect, useState} from "react";
+
+import {Rocket} from "../Rocket/Rocket";
 import {rocketService} from "../../services/rocketService";
 import css from "./Rockets.module.css";
 
@@ -9,7 +10,7 @@ const Rockets = () => {
     const [rockets, setRockets] = useState([]);
 
     useEffect(() => {
-        console.log(rocketService.getAllRockets().then(value => setRockets(value)));
+        rocketService.getAllRockets().then(value => setRockets(value));
     }, []);
 
     const filterRockets = rockets.filter(rocket => rocket.launch_year !== '2020');
