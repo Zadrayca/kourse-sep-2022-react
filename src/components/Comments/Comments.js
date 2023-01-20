@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 
+import css from './Comments.module.css';
 import {Comment} from "../Comment/Comment";
 import {commentService} from "../../services";
 
@@ -12,7 +13,7 @@ const Comments = ({postIdByPost}) => {
     }, [postIdByPost]);
 
     return (
-        <div className={'bigBox'}>
+        <div className={css.commentBox}>
             {comments && comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
     )

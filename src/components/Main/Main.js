@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import css from './Main.module.css';
 import {Users} from "../Users/Users";
 import {Posts} from "../Posts/Posts";
-import {useState} from "react";
 import {Details} from "../Details/Details";
 import {Comments} from "../Comments/Comments";
 
@@ -33,9 +32,9 @@ const Main = () => {
     return (
         <div className={css.main}>
             <div className={css.topBox}>
-                    <Users userId={userId} getUserId={getUserId} getUserIdByPost={getUserIdByPost}/>
-                    {userId && <Details userId={userId} getUserIdByPost={getUserIdByPost}/>}
-                    {userIdByPost && <Posts userIdByPost={userIdByPost} getPostIdByPost={getPostIdByPost}/>}
+                <Users userId={userId} getUserId={getUserId} getUserIdByPost={getUserIdByPost}/>
+                {userId && <Details userId={userId} getUserIdByPost={getUserIdByPost}/>}
+                {userIdByPost && <Posts userIdByPost={userIdByPost} getPostIdByPost={getPostIdByPost}/>}
             </div>
 
             <div className={css.comments}>
