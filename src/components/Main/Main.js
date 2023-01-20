@@ -38,7 +38,7 @@ const Main = () => {
             <div className={css.comments}>
                 {postIdByPost && <Comments postIdByPost={postIdByPost}/>}
             </div>
-            <div>
+            <div className={css.rockets}>
                 <Rockets/>
             </div>
         </div>
