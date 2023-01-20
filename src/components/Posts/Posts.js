@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+
+import css from './Posts.module.css'
 import {Post} from "../Post/Post";
 import {postService} from "../../services";
 
@@ -11,7 +13,7 @@ const Posts = ({userIdByPost, getPostIdByPost}) => {
     }, [userIdByPost]);
 
     return (
-        <div>
+        <div className={css.postsBox}>
             {postsUser && postsUser.map(post => <Post key={post.id} post={post} getPostIdByPost={getPostIdByPost}/>)}
         </div>
     );

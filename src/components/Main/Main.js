@@ -32,13 +32,15 @@ const Main = () => {
 
     return (
         <div className={css.main}>
-            <div className={css.users}>
-                <Users userId={userId} getUserId={getUserId} getUserIdByPost={getUserIdByPost}/>
-                {userId && <Details userId={userId} getUserIdByPost={getUserIdByPost}/>}
+            <div className={css.topBox}>
+                    <Users userId={userId} getUserId={getUserId} getUserIdByPost={getUserIdByPost}/>
+                    {userId && <Details userId={userId} getUserIdByPost={getUserIdByPost}/>}
+                    {userIdByPost && <Posts userIdByPost={userIdByPost} getPostIdByPost={getPostIdByPost}/>}
             </div>
 
-            {userIdByPost && <Posts userIdByPost={userIdByPost} getPostIdByPost={getPostIdByPost}/>}
-            {postIdByPost && <Comments postIdByPost={postIdByPost}/>}
+            <div className={css.comments}>
+                {postIdByPost && <Comments postIdByPost={postIdByPost}/>}
+            </div>
         </div>
     );
 };
