@@ -1,4 +1,6 @@
 import React from 'react';
+
+import css from './Car.module.css';
 import {carService} from "../../services";
 
 const Car = ({car, setUpdateCar, setDel}) => {
@@ -13,12 +15,12 @@ const Car = ({car, setUpdateCar, setDel}) => {
     }
 
     return (
-        <div>
+        <div className={css.carBox}>
             <div>id : {id}</div>
             <div>brand : {brand}</div>
             <div>price : {price}</div>
             <div>year : {year}</div>
-            <div>
+            <div className={css.btnDiv}>
                 <button onClick={() => setUpdateCar(car)}>Update</button>
                 <button onClick={() => deleteCar(id)}>Delete</button>
             </div>

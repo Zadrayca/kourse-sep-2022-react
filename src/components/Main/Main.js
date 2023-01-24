@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+
+import css from './Main.module.css';
 import {Cars} from "../Cars/Cars";
 import {CarForm} from "../CarForm/CarForm";
 
@@ -6,21 +8,11 @@ const Main = () => {
 
     const [newCar, setNewCars] = useState(null);
 
-    const getNewCar = (Car) => {
-        setNewCars(Car);
-    }
-
     const [updateCar, setUpdateCar] = useState(null);
 
-    // const getUpdateCar = (Car) => {
-    //     setUpdateCar(Car);
-    // }
-
-    // console.log(updateCar);
-
     return (
-        <div>
-            <CarForm getNewCar={getNewCar} updateCar={updateCar} setUpdateCar={setUpdateCar}/>
+        <div className={css.main}>
+            <CarForm setNewCars={setNewCars} updateCar={updateCar} setUpdateCar={setUpdateCar}/>
             <Cars newCar={newCar} setUpdateCar={setUpdateCar} updateCar={updateCar}/>
         </div>
     );
