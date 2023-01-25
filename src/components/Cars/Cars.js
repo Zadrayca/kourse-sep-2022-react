@@ -8,15 +8,15 @@ const Cars = ({newCar, setUpdateCar}) => {
 
     const [cars, setCars] = useState([]);
 
-    const [del, setDel] = useState(null);
+    const [delCar, setDelCar] = useState(null);
 
     useEffect(() => {
         carService.getAllCar().then(({data}) => setCars([...data]))
-    }, [newCar, del]);
+    }, [newCar, delCar]);
 
     return (
         <div className={css.bigBox}>
-            {cars && cars.map(car => <Car key={car.id} car={car} setUpdateCar={setUpdateCar} setDel={setDel}/>)}
+            {cars && cars.map(car => <Car key={car.id} car={car} setUpdateCar={setUpdateCar} setDelCar={setDelCar}/>)}
         </div>
     );
 };

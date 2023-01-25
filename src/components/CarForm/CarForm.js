@@ -59,9 +59,11 @@ const CarForm = ({setNewCars, updateCar, setUpdateCar}) => {
                 <div className={css.errors}>
                     {errors.brand && <div className={css.error}>{errors.brand.message}</div>}
                 </div>
+
                 <div className={css.errors}>
                     {errors.price && <div className={css.error}>{errors.price.message}</div>}
                 </div>
+
                 <div className={css.errors}>
                     {errors.year && <div className={css.error}>{errors.year.message}</div>}
                 </div>
