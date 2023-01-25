@@ -22,7 +22,6 @@ const CarForm = ({setNewCars, updateCar, setUpdateCar}) => {
         } else {
             const {data} = await carService.createCar(car);
             setNewCars(data);
-            setUpdateCar(null);
             reset();
         }
     }
