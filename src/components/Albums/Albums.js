@@ -1,6 +1,7 @@
 import React from 'react';
 import {useEffect, useState} from "react";
 
+import css from './Albums.module.css';
 import {albumsService} from "../../services";
 import {Album} from "../Album/Album";
 
@@ -13,7 +14,8 @@ const Albums = () => {
     }, []);
 
     return (
-        <div>
+        <div className={css.AlbumsBox}>
+            <h1>Albums Page</h1>
             {albums && albums.map(album => <Album key={album.id} album={album}/>)}
         </div>
     );

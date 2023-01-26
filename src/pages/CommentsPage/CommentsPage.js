@@ -8,7 +8,9 @@ const CommentsPage = () => {
     return (
         <div className={css.bigBox}>
             <Comments/>
-            <Outlet/>
+            <div className={css.outlet}>
+                <Outlet/>
+            </div>
         </div>
     );
 };

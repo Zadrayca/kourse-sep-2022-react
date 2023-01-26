@@ -1,0 +1,11 @@
+.TodoBox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #3959af;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 20px;
+}

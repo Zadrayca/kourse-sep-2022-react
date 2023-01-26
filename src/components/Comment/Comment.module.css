@@ -1,0 +1,20 @@
+.CommentBox {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #3959af;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 20px;
+    gap: 3px;
+}
+
+.CommentBox button {
+    height: 35px;
+    width: 200px;
+    background-color: #3959af;
+    font-size: 20px;
+    color: snow;
+}

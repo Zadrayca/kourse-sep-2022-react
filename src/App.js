@@ -3,19 +3,22 @@ import {Route, Routes} from "react-router-dom";
 import './App.css';
 import {AlbumsPage, CommentsPage, HomePage, NotFoundPage, PostPage, TodosPage} from "./pages";
 import {MainLayout} from "./layouts";
+import {RouterEndpoints} from "./routes/routes";
 
 function App() {
     return (
-        <div>
+        <div className={'App'}>
             <Routes>
-                <Route path={'/'} element={<MainLayout/>}>
+                <Route path={RouterEndpoints.index} element={<MainLayout/>}>
                     <Route index element={<HomePage/>}/>
-                    <Route path={'todos'} element={<TodosPage/>}/>
-                    <Route path={'albums'} element={<AlbumsPage/>}/>
-                    <Route path={'comments'} element={<CommentsPage/>}>
-                        <Route path={':postId'} element={<PostPage/>}/>
+                    <Route path={RouterEndpoints.todos} element={<TodosPage/>}/>
+                    <Route path={RouterEndpoints.albums} element={<AlbumsPage/>}/>
+
+                    <Route path={RouterEndpoints.comments} element={<CommentsPage/>}>
+                        <Route path={RouterEndpoints.postId} element={<PostPage/>}/>
                     </Route>
-                    <Route path={"*"} element={<NotFoundPage/>}/>
+
+                    <Route path={RouterEndpoints.noFound} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>
         </div>

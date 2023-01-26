@@ -1,17 +1,16 @@
 import React from 'react';
 
+import css from './PostPage.module.css';
 import {Posts} from "../../components";
-import {useLocation, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const PostPage = () => {
 
     const {postId} = useParams();
 
-    const {state} = useLocation();
-
     return (
-        <div>
-            <Posts postId={postId} state={state}/>
+        <div className={css.bigBox}>
+            <Posts postId={postId}/>
         </div>
     );
 };

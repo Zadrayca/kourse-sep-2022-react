@@ -6,3 +6,4 @@ export * from './Comment/Comment';
 export * from './Comments/Comments';
 export * from './Album/Album';
 export * from './Albums/Albums';
+export * from './Header/Header';
