@@ -2,7 +2,7 @@ import {axiosService} from "./axiosService";
 import {urls} from "../configs";
 
 const todosService = {
-    getComments: () => axiosService.get(urls.todos)
+    getTodos: () => axiosService.get(urls.todos)
 };
 
 export {
