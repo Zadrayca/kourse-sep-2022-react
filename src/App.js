@@ -3,7 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import './App.css';
 import {RouterEndpoints} from "./routes";
 import {MainLayout} from "./layouts";
-import {CommentsPage, HomePage, NotFoundPage, PostPage} from "./pages";
+import {CommentsPage, HomePage, NotFoundPage, PostPage, CatsAndDogsPage} from "./pages";
 
 function App() {
     return (
@@ -13,6 +13,7 @@ function App() {
                     <Route index element={<HomePage/>}/>
                     <Route path={RouterEndpoints.posts} element={<PostPage/>}/>
                     <Route path={RouterEndpoints.comments} element={<CommentsPage/>}/>
+                    <Route path={RouterEndpoints.catsAndDogs} element={<CatsAndDogsPage/>}/>
                     <Route path={RouterEndpoints.noFound} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>

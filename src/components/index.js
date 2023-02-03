@@ -3,3 +3,8 @@ export * from './Posts/Posts';
 export * from './Post/Post';
 export * from './Comments/Comments';
 export * from './Comment/Comment';
+export * from './Dogs/Dogs';
+export * from './Dog/Dog';
+export * from './Cats/Cats';
+export * from './Cat/Cat';
+export * from './CatsAndDogs/CatsAndDogs';
