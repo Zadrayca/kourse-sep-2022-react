@@ -33,7 +33,9 @@ const CatsAndDogs = () => {
     const catInp = useRef();
     const dogInp = useRef();
 
-    const [state, dispatch] = useReducer(reducer, {cats:[], dogs:[]}, (data)=> data);
+    const initialState = {cats:[], dogs:[]};
+
+    const [state, dispatch] = useReducer(reducer, initialState, (data)=> data);
 
     const createCat = () => {
         dispatch({type: 'ADD_CAT', payload: catInp.current.value});
