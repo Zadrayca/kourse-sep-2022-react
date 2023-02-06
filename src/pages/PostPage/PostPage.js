@@ -1,11 +1,12 @@
 import React from 'react';
 
 import {Posts} from "../../components";
+import css from '../Page.module.css';
 
 const PostPage = () => {
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className={css.Page}>
             <Posts/>
         </div>
     );

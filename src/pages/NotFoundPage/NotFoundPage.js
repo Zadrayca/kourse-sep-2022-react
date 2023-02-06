@@ -1,8 +1,10 @@
 import React from 'react';
 
+import css from '../Page.module.css';
+
 const NotFoundPage = () => {
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className={css.Page}>
             <h1>Not Found Page</h1>
         </div>
     );

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import css from '../Page.module.css';
+
 const HomePage = () => {
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className={css.Page}>
             <h1>Home Page</h1>
         </div>
     );

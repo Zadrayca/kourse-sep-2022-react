@@ -1,11 +1,10 @@
-import React from 'react';
-
 import {CatsAndDogs} from "../../components";
 
+import css from './CatsAndDogsPage.module.css';
 
 const CatsAndDogsPage = () => {
     return (
-        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+        <div className={css.CatsAndDogs}>
             <h1>Cats And Dogs</h1>
             <CatsAndDogs/>
         </div>
