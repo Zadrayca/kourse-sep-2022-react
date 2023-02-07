@@ -6,3 +6,17 @@
     align-items: center;
     gap: 15px;
 }
+
+.SelectedPost {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #3959af;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.SelectedPost button {
+    display: none;
+}

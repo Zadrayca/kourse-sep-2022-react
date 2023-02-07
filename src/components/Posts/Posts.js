@@ -1,29 +1,32 @@
-import {Component} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
 
-import {postsService} from "../../services";
+import {postActions} from "../../reduxs";
 import {Post} from "../Post/Post";
 import css from './Posts.module.css';
 
-class Posts extends Component {
+const Posts = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {posts: []};
-    }
+    const dispatch = useDispatch();
+    const {posts, selectedPost, errors, loading} = useSelector(state => state.posts);
 
-    componentDidMount() {
-        postsService.getAllPosts().then(({data}) => this.setState({posts: [...data]}));
-    }
+    useEffect(() => {
+        dispatch(postActions.getAll())
+    }, [dispatch]);
 
-    render() {
-        return (
-            <div className={css.PostsBox}>
-                <h1>Posts Page</h1>
-                {this.state.posts.map(post => <Post key={post.id} post={post}/>)}
+    return (
+        <div className={css.PostsBox}>
+            <h1>Posts Page</h1>
+            <div className={css.SelectedPost}>
+                <h3>Selected Post</h3>
+                {selectedPost && <Post post={selectedPost}/>}
             </div>
-        )
-    }
-}
+            {errors && JSON.stringify(errors)}
+            {loading && <h1>Loading.......</h1>}
+            {posts.map(post => <Post key={post.id} post={post}/>)}
+        </div>
+    );
+};
 
 export {
     Posts

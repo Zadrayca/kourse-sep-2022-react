@@ -16,3 +16,7 @@
     border-radius: 10px;
     padding: 5px;
 }
+
+.SelectedUser button {
+    display: none;
+}

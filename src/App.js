@@ -2,7 +2,7 @@ import {Routes, Route} from "react-router-dom";
 
 import './App.css';
 import {MainLayout} from "./layouts";
-import {UsersPage, HomePage, NotFoundPage, PostPage, CatsAndDogsPage} from "./pages";
+import {UsersPage, HomePage, NotFoundPage, PostPage, CarsPage} from "./pages";
 
 function App() {
     return (
@@ -12,7 +12,7 @@ function App() {
                     <Route index element={<HomePage/>}/>
                     <Route path={'posts'} element={<PostPage/>}/>
                     <Route path={'users'} element={<UsersPage/>}/>
-                    <Route path={'catsanddogs'} element={<CatsAndDogsPage/>}/>
+                    <Route path={'cars'} element={<CarsPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>

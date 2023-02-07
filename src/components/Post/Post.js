@@ -1,21 +1,25 @@
-import {Component} from "react";
+import {postActions} from "../../reduxs";
+import {useDispatch} from "react-redux";
 
 import css from './Post.module.css';
 
-class Post extends Component {
+const Post = ({post}) => {
 
-    render() {
-        const {userId, id, title, body} = this.props.post;
-        return (
-            <div className={css.PostBox}>
-                <div>UserId :{userId}</div>
-                <div>Id :{id}</div>
-                <div>Title :{title}</div>
-                <div>Body :{body}</div>
-            </div>
-        )
-    }
-}
+    const {userId, id, title, body} = post;
+
+    const dispatch = useDispatch();
+
+    return (
+        <div className={css.PostBox}>
+            <div>UserId :{userId}</div>
+            <div>Id :{id}</div>
+            <div>Title :{title}</div>
+            <div>Body :{body}</div>
+            <button onClick={()=> dispatch(postActions.setSelectedPost(post))}>Select</button>
+            <button onClick={()=> dispatch(postActions.getById({id}))}>apiSelect</button>
+        </div>
+    );
+};
 
 export {
     Post

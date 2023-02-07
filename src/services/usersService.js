@@ -3,7 +3,7 @@ import {urls} from "../configs";
 
 const usersService = {
     getAllUsers:()=>axiosService1.get(urls.users),
-    getUserById:(id)=>axiosService1.get(`${urls.posts}/${id}`)
+    getUserById:(id)=>axiosService1.get(`${urls.users}/${id}`)
 };
 
 export {
