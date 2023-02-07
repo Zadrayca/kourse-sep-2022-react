@@ -1,0 +1,18 @@
+.UsersBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.SelectedUser {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #3959af;
+    border-radius: 10px;
+    padding: 5px;
+}

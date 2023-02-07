@@ -1,16 +1,16 @@
 import React from 'react';
 
-import {Comments} from "../../components";
+import {Users} from "../../components";
 import css from '../Page.module.css';
 
-const CommentsPage = () => {
+const UsersPage = () => {
     return (
         <div className={css.Page}>
-            <Comments/>
+            <Users/>
         </div>
     );
 };
 
 export {
-    CommentsPage
+    UsersPage
 };

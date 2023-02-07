@@ -8,7 +8,7 @@ const Header = () => {
         <div className={css.header}>
             <NavLink to={''}>Home Page</NavLink>
             <NavLink to={'posts'}>Posts</NavLink>
-            <NavLink to={'comments'}>Comments</NavLink>
+            <NavLink to={'users'}>Users</NavLink>
             <NavLink to={'catsanddogs'}>Cats And Dogs</NavLink>
         </div>
     );

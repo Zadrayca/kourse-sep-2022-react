@@ -1,4 +1,4 @@
-.CommentBox {
+.UserBox {
     width: 90%;
     height: 100%;
     display: flex;
@@ -9,4 +9,5 @@
     padding: 2px;
     font-size: 20px;
     gap: 3px;
+    justify-content: center;
 }
