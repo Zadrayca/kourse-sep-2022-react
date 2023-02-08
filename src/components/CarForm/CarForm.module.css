@@ -52,6 +52,7 @@
     background-color: #afc6ff;
     font-weight: 600;
     font-family: Georgia, sans-serif;
+    cursor: pointer;
 }
 
 .errorsBox {
