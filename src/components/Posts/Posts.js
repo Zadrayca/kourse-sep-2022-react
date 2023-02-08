@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {postActions} from "../../reduxs";
 import {Post} from "../Post/Post";
 import css from './Posts.module.css';
+import {Loader} from "../UI";
 
 const Posts = () => {
 
@@ -17,13 +18,12 @@ const Posts = () => {
     return (
         <div className={css.PostsBox}>
             <h1>Posts Page</h1>
-            <div className={css.SelectedPost}>
+            {selectedPost && <div className={css.SelectedPost}>
                 <h3>Selected Post</h3>
-                {selectedPost && <Post post={selectedPost}/>}
-            </div>
+                <Post post={selectedPost}/>
+            </div>}
             {errors && JSON.stringify(errors)}
-            {loading && <h1>Loading.......</h1>}
-            {posts.map(post => <Post key={post.id} post={post}/>)}
+            {loading ? <Loader/> : posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
 };

@@ -11,8 +11,9 @@ const initialState = {
 
 const getAll = createAsyncThunk(
     'carSlice/getAll',
-    async (_, thunkAPI) =>{
+    async (_, thunkAPI) => {
         try {
+            await new Promise(resolve => setTimeout(() => resolve(), 3000));
             const {data} = await carService.getAllCars();
             return data
         } catch (e) {
@@ -23,7 +24,7 @@ const getAll = createAsyncThunk(
 
 const create = createAsyncThunk(
     'carSlice/create',
-    async ({car}, thunkAPI) =>{
+    async ({car}, thunkAPI) => {
         try {
             await carService.create(car);
             thunkAPI.dispatch(getAll())
@@ -35,7 +36,7 @@ const create = createAsyncThunk(
 
 const deleteById = createAsyncThunk(
     'carSlice/deleteById',
-    async ({id}, thunkAPI) =>{
+    async ({id}, thunkAPI) => {
         try {
             await carService.deleteById(id);
             thunkAPI.dispatch(getAll())
@@ -47,7 +48,7 @@ const deleteById = createAsyncThunk(
 
 const updateById = createAsyncThunk(
     'carSlice/updateById',
-    async ({id, car}, thunkAPI) =>{
+    async ({id, car}, thunkAPI) => {
         try {
             await carService.updateById(id, car);
             thunkAPI.dispatch(getAll())
@@ -58,21 +59,25 @@ const updateById = createAsyncThunk(
 );
 
 const carSlice = createSlice({
-    name:'carSlice',
+    name: 'carSlice',
     initialState,
-    reducers:{
-        setCarForUpdate:((state, action) => {
+    reducers: {
+        setCarForUpdate: ((state, action) => {
             state.carForUpdate = action.payload
         })
     },
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
+                state.loading = false
                 state.cars = action.payload
+            })
+            .addCase(getAll.pending, (state) => {
+                state.loading = true
             })
 });
 
-const {reducer: carReducer, actions:{setCarForUpdate}} = carSlice;
+const {reducer: carReducer, actions: {setCarForUpdate}} = carSlice;
 
 const carActions = {
     getAll,

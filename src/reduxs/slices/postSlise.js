@@ -14,6 +14,7 @@ const getAll = createAsyncThunk(
     'postSlice/getAll',
     async (_, {rejectWithValue}) => {
         try {
+            await new Promise(resolve => setTimeout( () => resolve(), 3000));
             const {data} = await postsService.getAllPosts();
             return data
         } catch (e) {

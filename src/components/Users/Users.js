@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {userActions} from "../../reduxs";
 import {User} from "../User/User";
 import css from './Users.module.css';
+import {Loader} from "../UI";
 
 const Users = () => {
 
@@ -17,13 +18,12 @@ const Users = () => {
     return (
         <div className={css.UsersBox}>
             <h1>Users Page</h1>
-            <div className={css.SelectedUser}>
+            {selectedUser && <div className={css.SelectedUser}>
                 <h3>Selected User</h3>
-                {selectedUser && <User user={selectedUser}/>}
-            </div>
+                <User user={selectedUser}/>
+            </div>}
             {errors && JSON.stringify(errors)}
-            {loading && <h1>Loading.......</h1>}
-            {users.map(user => <User key={user.id} user={user}/>)}
+            {loading ? <Loader/> : users.map(user => <User key={user.id} user={user}/>)}
         </div>
 
     );

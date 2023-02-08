@@ -2,6 +2,7 @@ import {useDispatch} from "react-redux";
 import {userActions} from "../../reduxs";
 
 import css from './User.module.css';
+import {Button} from "../UI";
 
 const User = ({user}) => {
 
@@ -14,8 +15,10 @@ const User = ({user}) => {
             <div>Id :{id}</div>
             <div>Name :{name}</div>
             <div>Username :{username}</div>
-            <button onClick={()=> dispatch(userActions.setSelectedUser(user))}>Select</button>
-            <button onClick={()=> dispatch(userActions.getById({id}))}>apiSelect</button>
+            <div className={css.btnDiv}>
+                <Button onClick={()=> dispatch(userActions.setSelectedUser(user))}>Select</Button>
+                <Button onClick={()=> dispatch(userActions.getById({id}))}>apiSelect</Button>
+            </div>
         </div>
     );
 };

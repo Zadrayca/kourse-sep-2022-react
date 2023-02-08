@@ -2,6 +2,7 @@ import {postActions} from "../../reduxs";
 import {useDispatch} from "react-redux";
 
 import css from './Post.module.css';
+import {Button} from "../UI";
 
 const Post = ({post}) => {
 
@@ -15,8 +16,10 @@ const Post = ({post}) => {
             <div>Id :{id}</div>
             <div>Title :{title}</div>
             <div>Body :{body}</div>
-            <button onClick={()=> dispatch(postActions.setSelectedPost(post))}>Select</button>
-            <button onClick={()=> dispatch(postActions.getById({id}))}>apiSelect</button>
+            <div className={css.btnDiv}>
+                <Button onClick={()=> dispatch(postActions.setSelectedPost(post))}>Select</Button>
+                <Button onClick={()=> dispatch(postActions.getById({id}))}>apiSelect</Button>
+            </div>
         </div>
     );
 };

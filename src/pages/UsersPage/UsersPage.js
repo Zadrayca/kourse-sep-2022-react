@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {Users} from "../../components";
 import css from '../Page.module.css';
 

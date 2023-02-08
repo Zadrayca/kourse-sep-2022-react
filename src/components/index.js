@@ -6,3 +6,5 @@ export * from './User/User';
 export * from './CarForm/CarForm';
 export * from './Cars/Cars';
 export * from './Car/Car';
+export * from './UI/Loader/Loader';
+export * from './UI/Button/Button';

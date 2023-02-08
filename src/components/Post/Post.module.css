@@ -9,4 +9,12 @@
     padding: 2px;
     font-size: 20px;
     gap: 3px;
+    font-family: Georgia, sans-serif;
+}
+
+.btnDiv {
+    display: flex;
+    flex-direction: row;
+    width: 355px;
+    justify-content: space-between;
 }
