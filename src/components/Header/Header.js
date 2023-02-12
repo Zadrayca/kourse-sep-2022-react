@@ -9,7 +9,9 @@ const Header = () => {
             <NavLink to={'posts'}>Posts</NavLink>
             <NavLink to={'users'}>Users</NavLink>
             <NavLink to={'cars'}>Cars</NavLink>
-            <NavLink to={'cars2'}>Cars2</NavLink>
+            <NavLink to={'login'}>Login</NavLink>
+            <NavLink to={'register'}>Register</NavLink>
+            {/*<NavLink to={'cars2'}>Cars2</NavLink>*/}
         </div>
     );
 };

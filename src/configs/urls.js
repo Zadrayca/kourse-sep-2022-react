@@ -25,7 +25,8 @@ const urls = {
     auth: {
         login: auth,
         refresh: auth + refresh,
-        me: auth + me
+        me: auth + me,
+        users: users
     }
 }
 
