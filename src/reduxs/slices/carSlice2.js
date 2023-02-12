@@ -53,7 +53,7 @@ const updateById = createAsyncThunk(
     async ({id, car}, thunkAPI) => {
         try {
             await carService2.updateById(id, car);
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page: 1}))
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
