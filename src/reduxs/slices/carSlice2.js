@@ -41,7 +41,7 @@ const deleteById = createAsyncThunk(
     async ({id}, thunkAPI) => {
         try {
             await carService2.deleteById(id);
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page: 1}))
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
