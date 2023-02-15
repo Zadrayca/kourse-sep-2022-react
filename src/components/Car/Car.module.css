@@ -1,0 +1,20 @@
+.carBox {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 200px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 19px;
+    border: 3px solid #3959af;
+    padding: 1px;
+    border-radius: 10px;
+    font-family: Georgia, sans-serif;
+}
+
+.btnDiv {
+    display: flex;
+    flex-direction: row;
+    width: 355px;
+    justify-content: space-between;
+}
