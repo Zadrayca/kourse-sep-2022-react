@@ -3,8 +3,11 @@ import {ICar} from "../interfaces";
 import {urls} from "../configs";
 
 const carService = {
-    getAll: (): IRes<ICar[]> => apiService.get(urls.cars.base),
-    getById: (id:number): IRes<ICar> => apiService.get(urls.cars.byId(id))
+    getAllCars: (): IRes<ICar[]> => apiService.get(urls.cars.base),
+    getById: (id: string): IRes<ICar> => apiService.get(urls.cars.byId(id)),
+    create:(car:ICar): IRes<ICar> => apiService.post(urls.cars.base, car),
+    updateById:(id: string, data:ICar) => apiService.put(urls.cars.byId(id), data),
+    deleteById:(id: string) => apiService.delete(urls.cars.byId(id))
 }
 
 export {

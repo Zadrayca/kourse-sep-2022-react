@@ -9,3 +9,7 @@
     row-gap: 15px;
     padding: 15px 0;
 }
+
+.Details button {
+    display: none;
+}

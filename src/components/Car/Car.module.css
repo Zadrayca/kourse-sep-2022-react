@@ -15,6 +15,6 @@
 .btnDiv {
     display: flex;
     flex-direction: row;
-    width: 355px;
+    width: 500px;
     justify-content: space-between;
 }

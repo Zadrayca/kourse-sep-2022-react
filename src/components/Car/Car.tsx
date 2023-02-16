@@ -1,7 +1,11 @@
 import {FC, ReactNode} from 'react';
+import {useNavigate} from "react-router-dom";
 
-import css from 'Car.module.css';
+import {MyButton} from '../UI/MyButton/MyButton';
+import css from './Car.module.css';
 import {ICar} from "../../interfaces";
+import {useAppDispatch} from "../../hooks";
+import {carActions} from "../../redux";
 
 interface IProps {
     car: ICar,
@@ -9,6 +13,10 @@ interface IProps {
 }
 
 const Car: FC<IProps> = ({car}) => {
+
+    const dispatch = useAppDispatch();
+
+    const navigate = useNavigate();
 
     const {id, brand, price, year} = car;
 
@@ -19,8 +27,9 @@ const Car: FC<IProps> = ({car}) => {
             <div>price : {price}</div>
             <div>year : {year}</div>
             <div className={css.btnDiv}>
-                {/*<Button onClick={() => dispatch(carActions.setCarForUpdate(car))}>Update</Button>*/}
-                {/*<Button onClick={() => dispatch(carActions.deleteById({id}))}>Delete</Button>*/}
+                <MyButton onClick={() => navigate(id.toString(), {state:car})}>Car Details</MyButton>
+                <MyButton onClick={() => dispatch(carActions.setCarForUpdate(car))}>Update</MyButton>
+                <MyButton onClick={() => dispatch(carActions.deleteById({id}))}>Delete</MyButton>
             </div>
         </div>
     );
